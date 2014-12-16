@@ -1,7 +1,6 @@
 require 'aws-sdk'
 require 'date'
 require 'zlib'
-require 'debugger'
 
 # load AWS library
 id = ENV['ADLER_AWS_ACCESS_KEY_ID']
