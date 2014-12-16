@@ -16,7 +16,8 @@ bucket = s3.buckets['adler-backups']
 date_stamp = DateTime.now.strftime("%Y%m%dT%H%M%S");
 db_user = "drupal_user"
 db_name = "drupal"
-db_pwd  = ENV["DRUPAL_DB_PWD"]
+# to harden db_pwd, take from mysql config and not envrionment
+db_pwd  = ENV["DRUPAL_DB_PWD"] 
 backup_file_name = "drupal_backup_#{date_stamp}.sql"
 backup_command = "mysqldump -u #{db_user} -p#{db_pwd} --single-transaction -r #{backup_file_name} #{db_name}"
 
