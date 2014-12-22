@@ -43,7 +43,6 @@ end
 #ship file to Amazon bucket
 compressed_backup_path = Pathname(compressed_backup_name)
 prefix = "drupal"
-# throw backup file in s3 bucket
 object_name = "#{prefix}/#{compressed_backup_name}"
 bucket.objects[object_name].write(compressed_backup_path, :acl => 'private')
 
